@@ -14,14 +14,40 @@
 </span>
 <div style="text-align: left;"><span style="font-weight: bold;">JavaScript
 Variables</span></div>
-<div style="text-align: left;"><button onclick="myFunction()">practice_1 carName="Volvo"</button>
+<div style="text-align: left;"><button onclick="carNameFunction()">practice_1
+carName="Volvo"</button><br>
+<button onclick="NumberFunction()">practice_1-2 number=50</button><br>
+<button onclick="XplusYFunction()">practice_1-4 5+10</button><br>
+<button onclick="ZFunction()">practice_1-5 z=x+y</button><br>
+<button onclick="JohnFunction()">practice_1-6 JohnDoe</button><br>
 <p id="demo">Display the result here.</p>
 <script>
 var carName = "Volvo" ;
-function myFunction() {
+var number = 50 ;
+var x = 5, y = 10;
+var z = x + y;
+var firstName = "Jonn";
+var lastName = "Doe";
+var age = 35;
+function carNameFunction() {
     document.getElementById("demo").innerHTML = carName;
 }
-</script></div>
+function NumberFunction(){
+    document.getElementById("demo").innerHTML= number ;
+}
+function XplusYFunction(){
+    document.getElementById("demo").innerHTML = x + y;
+}
+function ZFunction(){
+    document.getElementById("demo").innerHTML = z;
+}
+function JohnFunction(){
+    document.getElementById("demo").innerHTML = 
+firstName + " " + lastName + " is " + age;
+}
+</script><br>
+reference:<a target="_blank" href="http://www.w3schools.com/js/js_variables.asp">w3schools.com</a><br>
+</div>
 </div>
 
 </body></html>
