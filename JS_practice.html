@@ -36,6 +36,7 @@ function NumberFunction(){
     document.getElementById("demo").innerHTML= number ;
 }
 function XplusYFunction(){
+    
     document.getElementById("demo").innerHTML = x + y;
 }
 function ZFunction(){
@@ -51,16 +52,67 @@ reference:<a target="_blank" href="http://www.w3schools.com/js/js_variables.asp"
 <span style="font-weight: bold;">JavaScript Arithmetic<br>
 </span>
 <button onclick="dividedFunction()">practice_3-5 divided</button><br>
+x= 15 y= 9 and x%y<br>
 <p id="demo2">Display the result here.</p>
 <script>
 function dividedFunction(){
     var x = 15, y = 9;
     document.getElementById("demo2").innerHTML = x % y;
-    var x = 5, y = 10;
+    x = 5, y = 10;
 }
 </script>
 reference:<a target="_blank" href="http://www.w3schools.com/js/js_arithmetic.asp">w3schools.com</a><br>
+<br>
+<span style="font-weight: bold;">JavaScript Assignment</span><br>
+<div style="text-align: left;"><button onclick="PlusAssignmentFunction()">practice_4-1 PlusAssignment</button>
+x=10 and x+=5<br>
+</div>
+<button onclick="RemainderFunction()">practice_4-5 Remainder</button>
+x=10 and x%=3<br>
+<p id="demo3">Display the result here.</p>
+<script>
+function PlusAssignmentFunction(){ 
+    x = 10; 
+    x += 5;
+    document.getElementById("demo3").innerHTML = x; 
+    x = 5;
+}
+function RemainderFunction(){
+    x = 10;
+    x %= 3;
+    document.getElementById("demo3").innerHTML = x;
+    x = 5;
+}
+</script>
+reference:<a target="_blank" href="http://www.w3schools.com/js/js_assignment.asp">w3schools.com</a><br>
+<br>
+JavaScript Functions<br>
+<button onclick="CallFunction()">practice_5-3 CallFunction</button>Function
+return 5*5<br>
+<button onclick="HelloJohnFunction()">practice_5-4 HelloJohn</button>Function
+return hello+name<br>
+<p id="demo4">Display the result here.</p>
+<script>
+function ReturnFunction(){ return 5*5;
+}
+function CallFunction(){ document.getElementById("demo4").innerHTML =
+ReturnFunction();
+}
+function HelloJohnFunction(){
+    document.getElementById("demo4").innerHTML = HelloReturnFunction("John");
+    function HelloReturnFunction(name){
+        return "Hello " + name;
+    }
+}
+
+</script>
+reference:<a target="_blank" href="http://www.w3schools.com/js/js_functions.asp">w3schools.com</a><br>
+<br>
 </div>
 </div>
+
+<br>
+
+<br>
 
 </body></html>
