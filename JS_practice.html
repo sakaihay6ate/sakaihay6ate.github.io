@@ -86,7 +86,7 @@ function RemainderFunction(){
 </script>
 reference:<a target="_blank" href="http://www.w3schools.com/js/js_assignment.asp">w3schools.com</a><br>
 <br>
-JavaScript Functions<br>
+<span style="font-weight: bold;">JavaScript Functions</span><br>
 <button onclick="CallFunction()">practice_5-3 CallFunction</button>Function
 return 5*5<br>
 <button onclick="HelloJohnFunction()">practice_5-4 HelloJohn</button>Function
@@ -108,6 +108,20 @@ function HelloJohnFunction(){
 </script>
 reference:<a target="_blank" href="http://www.w3schools.com/js/js_functions.asp">w3schools.com</a><br>
 <br>
+JavaScript Onjects<br>
+<button onclick="firstNameFunction()">practice_6-1 person.firstName</button><br>
+<button onclick="NameYearFunction()">practice_6-3 Name and Years</button>
+<p id="demo5">Display the result here.</p>
+<script>
+var person = {firstName:"John", lastName:"Doe" , age:50};
+function firstNameFunction(){
+    document.getElementById("demo5").innerHTML = person.firstName;
+}
+function NameYearFunction(){
+    document.getElementById("demo5").innerHTML = person.firstName + " is " +person.age + " years old";
+}
+</script>
+reference:<a target="_blank" href="http://www.w3schools.com/js/js_objects.asp">w3schools.com</a><br>
 </div>
 </div>
 
