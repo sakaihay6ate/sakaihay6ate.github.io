@@ -125,11 +125,34 @@ reference:<a target="_blank" href="http://www.w3schools.com/js/js_objects.asp">w
 <br>
 <span style="font-weight: bold;">JavaScript Events</span><br>
 <p onclick="this.innerHTML='GOOD JOB!'">Clcik me.</p>
-<span onmouseover="this.style.color='red'">Mouse over me!</span>
-<br>
-<br>
+<p onmouseover="this.style.color='red'">Mouse over me!</p>
 reference:<a target="_blank" href="http://www.w3schools.com/js/js_events.asp">w3schools.com</a><br>
 <br>
+JavsScript Strings<br>
+string txt = "Hello World!"<br>
+<button onclick="HelloWorldFunction()">Hello World!</button><br>
+<button onclick="StringLengthFunction()">StringLength</button><br>
+<button onclick="useescapecharacter()">using escape character</button><br>
+<button onclick="StringAddition()">String addition</button><br>
+<p id="Stringsdemo">Display result here</p>
+<script>
+var txt = "Hello World!";
+function HelloWorldFunction(){
+    document.getElementById("Stringsdemo").innerHTML = txt;
+}
+function StringLengthFunction(){
+    document.getElementById("Stringsdemo").innerHTML = txt.length;
+}
+function useescapecharacter(){
+    document.getElementById("Stringsdemo").innerHTML = "We are \"Vikings\"."; 
+}
+function StringAddition(){
+    var str1 = "Hello ";
+    var str2 = "World!";
+    document.getElementById("Stringsdemo").innerHTML = str1 + str2 ;
+}
+</script>
+reference:<a target="_blank" href="http://www.w3schools.com/js/js_strings.asp">w3schools.com</a><br>
 <div style="text-align: center;"><a href="index.html">return to Homepage</a><br>
 </div>
 </div>
