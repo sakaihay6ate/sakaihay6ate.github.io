@@ -6,7 +6,6 @@
 
   
 </head><body>
-<div style="text-align: center;">
 <div style="text-align: center;">javascript practice<br>
 </div>
 <a href="index.html">return to Homepage</a><br>
@@ -128,7 +127,7 @@ reference:<a target="_blank" href="http://www.w3schools.com/js/js_objects.asp">w
 <p onmouseover="this.style.color='red'">Mouse over me!</p>
 reference:<a target="_blank" href="http://www.w3schools.com/js/js_events.asp">w3schools.com</a><br>
 <br>
-JavsScript Strings<br>
+<span style="font-weight: bold;">JavsScript Strings</span><br>
 string txt = "Hello World!"<br>
 <button onclick="HelloWorldFunction()">Hello World!</button><br>
 <button onclick="StringLengthFunction()">StringLength</button><br>
@@ -153,8 +152,57 @@ function StringAddition(){
 }
 </script>
 reference:<a target="_blank" href="http://www.w3schools.com/js/js_strings.asp">w3schools.com</a><br>
+<br>
+<span style="font-weight: bold;">JavaScript String Methods</span><br>
+<button onclick="Stringindex()">Display the position of the first
+occurrence of "World" in the variable txt.</button><br>
+<p id="StringMethoddemo">Display result here</p>
+<button onclick="slicemethod()">Use the slice() method to display only "Banana,Kiwi".</button><br>
+<p id="fruitStrings"></p><br>
+<button onclick="replacemethod()">Use the replace() method to replace "World" with "Universe".</button><br>
+<p id="helloworld"></p>
+<button onclick="concatmethod()">Use the concat() method to join the two strings: str1 and str2.</button><br>
+<p id="helloplusworld">concat here</p>
+<script>
+var txt = "Hello World";
+document.getElementById("StringMethoddemo").innerHTML = txt;
+function Stringindex(){
+    document.getElementById("StringMethoddemo").innerHTML = txt.indexOf("World");
+}
+var fruitstxt ="Apple,Baana,Kiwi";
+document.getElementById("fruitStrings").innerHTML = fruitstxt;
+function slicemethod(){
+    document.getElementById("fruitStrings").innerHTML = fruitstxt.slice(6);
+}
+document.getElementById("helloworld").innerHTML = txt;
+function replacemethod(){
+    document.getElementById("helloworld").innerHTML = txt.replace("World","Universe");
+}
+var str1 = "Hello ";
+var str2 = "World!";
+document.getElementById("helloplusworld").innerHTML = str1;
+function concatmethod(){
+
+    document.getElementById("helloplusworld").innerHTML = str1.concat(str2);
+}
+
+</script>
+reference:<a target="_blank" href="http://www.w3schools.com/js/js_string_methods.asp">w3schools.com</a><br>
+<br>
+<span style="font-weight: bold;">JavaScript Math Object</span><br>
+<button onclick="randomfunction()">math random</button><br>
+<button onclick="sqrt()">root of 9</button><br>
+<p id="mathobject">math object</p><br>
+<script>
+function randomfunction(){
+    document.getElementById("mathobject").innerHTML = Math.random();
+}
+function sqrt(){
+    document.getElementById("mathobject").innerHTML = Math.sqrt(9);
+}
+</script>
+reference:<a target="_blank" href="http://www.w3schools.com/js/js_math.asp">w3schools.com</a><br>
 <div style="text-align: center;"><a href="index.html">return to Homepage</a><br>
-</div>
 </div>
 </div>
 
