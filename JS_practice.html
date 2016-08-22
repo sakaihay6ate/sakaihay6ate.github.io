@@ -214,11 +214,23 @@ function toDateString(){
 reference:<a target="_blank" href="http://www.w3schools.com/js/js_dates.asp">w3schools.com</a><br>
 <br>
 <span style="font-weight: bold;">JavaScript Arrays</span><br>
-<p id="carsarray">Display result here</p><br>
+<button onclick="arrayindex()">Display </button>the "Volvo" item of the cars array.
+<br>
+<button onclick="arraylength()">add a new item to cars: Mercedes.</button><br>
+<p id="carsarray">Display result here</p>
 <script>
 var cars =["Saab", "Volvo", "BMW"];
 document.getElementById("carsarray").innerHTML = cars;
+
+function arrayindex(){
+    document.getElementById("carsarray").innerHTML = cars[1];
+}
+function arraylength(){
+    cars[cars.length]="Mercedes";
+	document.getElementById("carsarray").innerHTML = cars;
+}
 </script>
+reference:<a target="_blank" href="http://www.w3schools.com/js/js_arrays.asp">w3schools.com</a><br>
 <div style="text-align: center;"><a href="index.html">return to Homepage</a><br>
 </div>
 
