@@ -1,0 +1,21 @@
+<!doctype html> <meta charset="utf-8"> 
+
+<title>Hello World</title> 
+
+<body> 
+	<canvas id="main"></canvas>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/3.0.8/pixi.min.js"></script> 
+
+<script>
+var renderer = new PIXI.autoDetectRenderer(256, 256, {
+            view: document.getElementById('main')
+        }
+    );
+
+// 創建 Stage 
+var stage = new PIXI.Container();
+
+// 以 Render 去渲染 Stage
+renderer.render(stage);
+</script>
+</body> 
