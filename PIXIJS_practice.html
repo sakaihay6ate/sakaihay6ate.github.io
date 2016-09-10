@@ -4,9 +4,10 @@
 
 <body> 
 	<canvas id="main"></canvas>
-	<script type="text/javascript" src="pixi.min.js"></script> 
+	<script type="text/javascript" src="pixi.js/bin/pixi.js"></script> 
 
 <script>
+console.log(PIXI);
 var renderer = new PIXI.autoDetectRenderer(256, 256, {
             view: document.getElementById('main')
         }
