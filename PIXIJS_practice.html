@@ -3,12 +3,13 @@
 <title>Hello World</title> 
 
 <body> 
-	<canvas id="main"></canvas>
+	<!-- <canvas id="main"></canvas> -->
 	<script type="text/javascript" src="jscript/pixi.min.js"></script> 
 
 <script>
 console.log(PIXI);
-var renderer = new PIXI.autoDetectRenderer(256, 256, {
+/*var renderer = new PIXI.autoDetectRenderer(256, 256, 
+		{
             view: document.getElementById('main')
         }
     );
@@ -17,6 +18,41 @@ var renderer = new PIXI.autoDetectRenderer(256, 256, {
 var stage = new PIXI.Container();
 
 // 以 Render 去渲染 Stage
-renderer.render(stage);
+renderer.render(stage);*/
+//_____________________________________
+var Container = PIXI.Container,
+	autoDetectRenderer = PIXI.autoDetectRenderer,
+	loader = PIXI.loader,
+	resources = PIXI.loader.resources,
+	Sprite = PIXI.Sprite;
+
+//Create the renderer
+var stage = new PIXI.Container(),
+    renderer = PIXI.autoDetectRenderer(811, 1200);
+document.body.appendChild(renderer.view);
+
+//Use Pixi's built-in `loader` object to load an image
+loader
+  .add([
+  	"images/cat.png",
+  	"images/a9W8b8i.jpg",
+  	])
+  .add("maidsakuya","http://i.imgur.com/oJQAxEC.jpg")
+  .load(setup);
+
+//This `setup` function will run when the image has loaded
+function setup() {
+
+  //Create the `cat` sprite from the texture
+  var cat = new Sprite(
+    resources.maidsakuya.texture
+  );
+
+  //Add the cat to the stage
+  stage.addChild(cat);
+
+  //Render the stage   
+  renderer.render(stage);
+}
 </script>
 </body> 
