@@ -38,18 +38,25 @@ loader
   	"images/a9W8b8i.jpg",
   	])
   .add("maidsakuya","http://i.imgur.com/oJQAxEC.jpg")
+  .on("progress".loadProgressHandler)
   .load(setup);
 
+//loading function
+function loadProgressHandler(){
+	console.log("loading");
+}
 //This `setup` function will run when the image has loaded
 function setup() {
 
   //Create the `cat` sprite from the texture
-  var cat = new Sprite(
+  var image = new Sprite(
     resources.maidsakuya.texture
   );
+  var image2 = new Sprite(resources["images/cat.png"].texture);
 
   //Add the cat to the stage
-  stage.addChild(cat);
+  stage.addChild(image);
+  stage.addChild(image2);
 
   //Render the stage   
   renderer.render(stage);
