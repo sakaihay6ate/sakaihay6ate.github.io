@@ -2,7 +2,7 @@
 const querystring=require("querystring"),
         fs=require("fs"),
         formidable=require("formidable");
-function start(response) {
+let start=(response)=> {
     console.log("Request handler 'start' was called.");
     let body = '<html>' +
         '<head>' +
@@ -23,23 +23,23 @@ function start(response) {
     response.end();
 }
 
-upload=(response,request)=>{
+ let upload=(response,request)=>{
     console.log(`Request handler 'upload' was called.`);
 
     let form = new formidable.IncomingForm();
     console.log(`about to parse`);
     form.parse(request,(error,fields,files)=>{
         console.log(`parsing done`);
-        fs.renameSync(files.upload.path,"./tmp/test.png");
-        response.writeHead(200, { "content-Type": "text/plain" });
-        response.write("received image:<br/>");
-        response.write(`<img src='/show'/>`);
+        // fs.renameSync(files.upload.path,"./tmp/test.png");
+        response.writeHead(200, { "content-Type": "text/html" });
+        response.write(`received image:<br/>`);
+        response.write(`<img src='/show' />`);
         response.end();
     })
 
 }
 
-function show(response) {
+let show=(response)=> {
     console.log("Request handler 'show' was called.");
     fs.readFile("./tmp/test.png", "binary", function (error, file) {
         if (error) {
