@@ -30,7 +30,7 @@ let start=(response)=> {
     console.log(`about to parse`);
     form.parse(request,(error,fields,files)=>{
         console.log(`parsing done`);
-        // fs.renameSync(files.upload.path,"./tmp/test.png");
+        fs.renameSync(files.upload.path,"./tmp/test.png");
         response.writeHead(200, { "content-Type": "text/html" });
         response.write(`received image:<br/>`);
         response.write(`<img src='/show' />`);
