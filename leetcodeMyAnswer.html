@@ -1,0 +1,169 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+    有空再做視覺化跟思路整理讓未來的自己笑一笑<br>
+        <div>
+        1. Two Sum<br>
+    <!-- var twoSum = function(nums, target) {
+    let i
+    let j
+    for(i=0;i<nums.length;i++){ for(j=i+1;j<nums.length;j++){ if(nums[i]+nums[j]===target){ return [i,j] } } } }; -->
+        </div>
+        <div>
+            2. Add Two Numbers<br>
+            <!-- var addTwoNumbers = function(l1, l2) {
+            let list=new ListNode(0);
+            let result =list;
+            let carry=0;
+            CalFunc=()=>{
+            let tempnum=0;
+            if(l1){
+            tempnum+=l1.val
+            l1=l1.next;
+            }
+            if(l2){
+            tempnum+=l2.val
+            l2=l2.next;
+            }
+            if(carry){
+            tempnum+=1
+            }
+            if(tempnum>9){
+            carry=1;
+            list.next=new ListNode(tempnum%10);
+            }else{
+            carry=0;
+            list.next=new ListNode(tempnum);
+            }
+            list=list.next
+            if(l1||l2||carry){
+            CalFunc();
+            }
+            }
+            CalFunc()
+            return result.next;
+            
+            }; -->
+        </div>
+        <div>
+            7. Reverse Integer<br>
+            <!-- var reverse = function(x) {
+            let numarray=[];
+            let numstring=x.toString()
+            if(x>0){
+            for(let i=numstring.length-1;i>=0;i--){
+            numarray.push(numstring.charAt(i));
+            }
+            let output=parseInt(numarray.join(''),10)
+            if((output<=Math.pow(2, 31))&&(output>=Math.pow(-2, 31)-1)){
+                return output;
+                }else{
+                return 0;
+                }
+                }else{
+                x=x*-1
+                for(let i=numstring.length-1;i>=0;i--){
+                numarray.push(numstring.charAt(i));
+                }
+                let output=parseInt(numarray.join(''),10)*-1
+                if((output<Math.pow(2, 31))&&(output>Math.pow(-2, 31)-1)){
+                    return output;
+                    }else{
+                    return 0;
+                    }
+                    }
+            
+            
+                    }; -->
+        </div>
+        <div>
+            9. Palindrome Number<br>
+            <!-- var isPalindrome = function(x) {
+            let str=x.toString()
+            let arr=str.split('')
+            let boolean=true;
+            arr.some((o,i,array)=>{
+            if(o!==array[array.length-1-i]){
+            boolean=false;
+            return true
+            }
+            })
+            
+            return boolean
+            }; -->
+        </div>
+        <div>
+            13. Roman to Integer<br>
+            <!-- var romanToInt = function(s) {
+            let number=0;
+            let tempary=[];
+            let length=s.length;
+            for(let i=0;i<length;i++){ tempary.push(s.slice(i,i+1)) } let RecursionFunc=()=>{
+                if(tempary.length>0){
+                switch(tempary[0]){
+                case 'I':
+                if(tempary[1]==='X'){
+                number+=9
+                tempary=tempary.slice(2)
+                }else if(tempary[1]==="V"){
+                number+=4
+                tempary=tempary.slice(2)
+                }else{
+                number+=1;
+                tempary=tempary.slice(1)
+                }
+                break;
+                case 'V':
+                number+=5;
+                tempary=tempary.slice(1)
+                break;
+                case 'X':
+                if(tempary[1]==='L'){
+                number+=40
+                tempary=tempary.slice(2)
+                }else if(tempary[1]==="C"){
+                number+=90
+                tempary=tempary.slice(2)
+                }else{
+                number+=10;
+                tempary=tempary.slice(1)
+                }
+                break;
+                case 'L':
+                number+=50;
+                tempary=tempary.slice(1)
+                break;
+                case 'C':
+                if(tempary[1]==='D'){
+                number+=400
+                tempary=tempary.slice(2)
+                }else if(tempary[1]==="M"){
+                number+=900
+                tempary=tempary.slice(2)
+                }else{
+                number+=100;
+                tempary=tempary.slice(1)
+                }
+                break;
+                case 'D':
+                number+=500;
+                tempary=tempary.slice(1)
+                break;
+                case 'M':
+                number+=1000;
+                tempary=tempary.slice(1)
+                break;
+                }
+                RecursionFunc();
+                }
+                }
+                RecursionFunc();
+                return number;
+            
+                }; -->
+        </div>
+
+    </body>
+</html>
