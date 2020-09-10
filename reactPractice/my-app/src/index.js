@@ -19,15 +19,35 @@ class Board extends React.Component {
       />
     );
   }
-
+  renderBoard(){
+    for(let i=0;i<3;i++){
+      for(let j=0;j<3;j++){
+        return (
+          <div className="board-row">
+            {this.renderSquare(i*3+j)}
+            {this.renderSquare(i + 1)}
+            {this.renderSquare(i + 2)}
+          </div>)
+      }
+    }
+  }
+  renderRow(i){
+    return (
+      <div className="board-row">
+        {this.renderSquare(i)}
+        {this.renderSquare(i+1)}
+        {this.renderSquare(i+2)}
+      </div>)
+  }
   render() {
     return (
       <div>
-        <div className="board-row">
+        {this.renderRow(0)}
+        {/* <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
-        </div>
+        </div> */}
         <div className="board-row">
           {this.renderSquare(3)}
           {this.renderSquare(4)}
@@ -48,6 +68,7 @@ class Game extends React.Component {
     super(props)
     this.state={
       history:[{squares:Array(9).fill(null),
+        position:null
       }],
       stepNumber:0,
       xIsNext:true,
@@ -64,6 +85,7 @@ class Game extends React.Component {
     this.setState({
       history:history.concat([{
         squares:squares,
+        position: `${(i % 3) + 1},${3-Math.floor(i/3)}`
       }]),
       stepNumber:history.length,
       xIsNext:!this.state.xIsNext,
@@ -81,12 +103,13 @@ class Game extends React.Component {
     const winner =calculateWinner(current.squares);
 
     const moves=history.map((step,move)=>{
+      console.log(history[0])
       const desc=move?
-      `Go to move #${move}`:
+      `Go to move #${move}(${history[move].position})`:
       `Go to game start`;
       return (
         <li key={move}>
-          <button onClick={()=>{this.jumpTo(move)}}>{desc}</button>
+          <button onClick={()=>{this.jumpTo(move)}}>{desc} </button>
         </li>
       );
     });
