@@ -20,44 +20,39 @@ class Board extends React.Component {
     );
   }
   renderBoard(){
+    let arrBoard=[];
     for(let i=0;i<3;i++){
-      for(let j=0;j<3;j++){
-        return (
-          <div className="board-row">
-            {this.renderSquare(i*3+j)}
-            {this.renderSquare(i + 1)}
-            {this.renderSquare(i + 2)}
-          </div>)
-      }
+      arrBoard.push(<div className="board-row">{this.renderRow(3,i)}</div >);
     }
-  }
-  renderRow(i){
-    return (
-      <div className="board-row">
-        {this.renderSquare(i)}
-        {this.renderSquare(i+1)}
-        {this.renderSquare(i+2)}
-      </div>)
+    return arrBoard;
+    }
+  renderRow(i,j){
+    let arrRow=[];
+    for(let k=0;k<i;k++){
+      arrRow.push(this.renderSquare(k+j*i))
+    }
+    return arrRow
   }
   render() {
     return (
       <div>
-        {this.renderRow(0)}
+        {this.renderBoard()}
+        {/* {this.renderRow(0)} */}
         {/* <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
         </div> */}
-        <div className="board-row">
+        {/* <div className="board-row">
           {this.renderSquare(3)}
           {this.renderSquare(4)}
           {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
+        </div> */}
+        {/* <div className="board-row">
           {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}
-        </div>
+        </div> */}
       </div>
     );
   }
@@ -103,7 +98,6 @@ class Game extends React.Component {
     const winner =calculateWinner(current.squares);
 
     const moves=history.map((step,move)=>{
-      console.log(history[0])
       const desc=move?
       `Go to move #${move}(${history[move].position})`:
       `Go to game start`;
