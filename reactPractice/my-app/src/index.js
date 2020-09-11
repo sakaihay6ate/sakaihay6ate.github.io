@@ -20,9 +20,11 @@ class Board extends React.Component {
     );
   }
   renderBoard(){
+    const col=this.props.col;
+    const row=this.props.row;
     let arrBoard=[];
-    for(let i=0;i<3;i++){
-      arrBoard.push(<div className="board-row">{this.renderRow(3,i)}</div >);
+    for(let i=0;i<row;i++){
+      arrBoard.push(<div className="board-row">{this.renderRow(col,i)}</div >);
     }
     return arrBoard;
     }
@@ -65,6 +67,8 @@ class Game extends React.Component {
       history:[{squares:Array(9).fill(null),
         position:null
       }],
+      col:3,
+      row:3,
       stepNumber:0,
       xIsNext:true,
     }
@@ -80,7 +84,7 @@ class Game extends React.Component {
     this.setState({
       history:history.concat([{
         squares:squares,
-        position: `${(i % 3) + 1},${3-Math.floor(i/3)}`
+        position: `${(i % this.state.col) + 1},${this.state.row-Math.floor(i/this.state.row)}`
       }]),
       stepNumber:history.length,
       xIsNext:!this.state.xIsNext,
@@ -120,6 +124,8 @@ class Game extends React.Component {
           <Board 
             squares={current.squares}
             onClick={(i)=>this.handleClick(i)}
+            col={this.state.col}
+            row={this.state.row}
           
           />
         </div>
