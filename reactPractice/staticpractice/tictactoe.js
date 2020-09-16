@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
 function Square(props) {
   return(
     <button className="square" onClick={props.onClick}>
@@ -25,7 +25,7 @@ class Board extends React.Component {
     const row=this.props.row;
     let arrBoard=[];
     for(let i=0;i<row;i++){
-      arrBoard.push(<div key={i}className="board-row">{this.renderRow(col,i)}</div >);
+      arrBoard.push(<div key={i} className="board-row">{this.renderRow(col, i)}</div >);
     }
     return arrBoard;
     }
