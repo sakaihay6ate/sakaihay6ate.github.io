@@ -180,46 +180,80 @@
                 return output
             }; -->
         </div>
-                <div>
-                    20. Valid Parentheses<br>
-                    <!-- var isValid = function(s) {
-                        let stack=[];
-                        for(let i=0;i<s.length;i++){
-                            switch(s[i]){
-                                case '(':
-                                case '[':
-                                case '{':
-                                    stack.push(s[i]);
-                                    break;
-                                case ')':
-                                    if(stack[stack.length-1]=='('){
-                                        stack.pop();
-                                    }else{
-                                    return false; 
-                                    }
-                                    break;
-                                case ']':
-                                    if(stack[stack.length-1]=='['){
-                                        stack.pop();
-                                    }else{
-                                    return false; 
-                                    }
-                                    break;
-                                case '}':
-                                    if(stack[stack.length-1]=='{'){
-                                        stack.pop();
-                                    }else{
-                                    return false; 
-                                    }
-                                    break;
+        <div>
+            20. Valid Parentheses<br>
+            <!-- var isValid = function(s) {
+                let stack=[];
+                for(let i=0;i<s.length;i++){
+                    switch(s[i]){
+                        case '(':
+                        case '[':
+                        case '{':
+                            stack.push(s[i]);
+                            break;
+                        case ')':
+                            if(stack[stack.length-1]=='('){
+                                stack.pop();
+                            }else{
+                            return false; 
+                            }
+                            break;
+                        case ']':
+                            if(stack[stack.length-1]=='['){
+                                stack.pop();
+                            }else{
+                            return false; 
+                            }
+                            break;
+                        case '}':
+                            if(stack[stack.length-1]=='{'){
+                                stack.pop();
+                            }else{
+                            return false; 
+                            }
+                            break;
+                    }
+                }
+                if(stack.length){
+                    return false
+                }else{
+                    return true
+                }    
+            }; -->
+        </div>
+        <div>
+            21. Merge Two Sorted Lists<br>
+                <!-- var mergeTwoLists = function(l1, l2) {
+                    if(!l1||!l2){
+                        return l1?l1:l2
+                    }
+                    const startNode = (l1.val <= l2.val)?(l1):(l2);    
+                    let currentNode=startNode;
+                    while(l1&&l2){
+                        if(l1.val<=l2.val){
+                            currentNode=l1;
+                            l1=l1.next
+
+                        }else{
+                            currentNode=l2;
+                            l2=l2.next
+                        }
+                        if(l1&&l2){
+                            if(l1.val<=l2.val){
+                                currentNode.next=l1;
+                            }else{
+                                currentNode.next=l2;
                             }
                         }
-                        if(stack.length){
-                            return false
-                        }else{
-                            return true
-                        }    
-                    }; -->
-                </div>
+                    }
+                    if(l1){
+                        currentNode.next=l1;
+                    }else{
+                        currentNode.next=l2;
+                    }    
+                    return startNode
+                    
+                };             -->
+        </div>
     </body>
 </html>
