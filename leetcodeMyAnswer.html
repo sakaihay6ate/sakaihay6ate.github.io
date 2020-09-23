@@ -284,5 +284,49 @@
                     return i
                 };             -->
         </div>
+        <div>
+            28. Implement strStr()<br>
+                <!-- var strStr = function(haystack, needle) {
+                    return haystack.indexOf(needle)    
+                };             -->
+        </div>
+        <div>
+            35. Search Insert Position<br>
+                <!-- var searchInsert = function(nums, target) {
+                    for(let i=0;i<nums.length;i++){
+                        if(nums[i]>=target){
+                            return i
+                        }
+                    }
+                    return nums.length;
+                };             -->
+        </div>
+        <div>
+            38. Count and Say<br>
+                <!-- var countAndSay = function(n) {
+                    if(n===1){
+                        return '1'
+                    }
+                    let output='1';
+                    for(let i=2;i<=n;i++){
+                        let counter=1;
+                        let num=output[0]
+                        let temp=output;
+                        output='';
+                        for(let j=1;j<=temp.length;j++){
+                            if(num==temp[j]){
+                                counter++
+                            }else{
+                                output=output+counter+num;
+                                num=temp[j];
+                                counter=1;
+                            }
+
+                        }
+                    }
+                    return output
+                };             -->
+        </div>
+        
     </body>
 </html>
