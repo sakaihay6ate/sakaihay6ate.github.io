@@ -371,6 +371,36 @@
                     return digits
                     
                 };             -->
-        </div>        
+        </div>   
+        <div>
+            67. Add Binary<br>
+                <!-- var addBinary = function(a, b) {
+                    let i=a.length-1;
+                    let j=b.length-1;
+                    let sum=''
+                    let carry=0;
+                    while(i>=0||j>=0){
+                        if(i<0){
+                            a[i]=0
+                        }
+                        if(j<0){
+                            b[j]=0
+                        }
+                        sum=(a[i]^b[j]^carry)+''+sum;
+                        if(a[i]==1&&b[j]==1||((a[i]==1||b[j]==1)&&carry)){
+                            carry=1
+                        }else{
+                            carry=0
+                        }
+                        i--
+                        j--
+                    }
+                    if(carry==1){
+                        return carry+sum;
+                    }
+                    return  sum
+                    
+                };             -->
+        </div>     
     </body>
 </html>
