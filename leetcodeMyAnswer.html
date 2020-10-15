@@ -1,15 +1,30 @@
 <html>
     <head>
         <title></title>
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     </head>
     <body>
+    <!-- 注意左角括號或稱小於符號 < 要用 &lt; 代替，右角括號或稱大於符號> 要用 &gt; 代替 -->
     有空再做視覺化跟思路整理讓未來的自己笑一笑<br>
         <div>
-        1. Two Sum<br>
-    <!-- var twoSum = function(nums, target) {
-    let i
-    let j
-    for(i=0;i<nums.length;i++){ for(j=i+1;j<nums.length;j++){ if(nums[i]+nums[j]===target){ return [i,j] } } } }; -->
+        1. Two Sum
+        <pre><code class="javascript">
+        var twoSum = function(nums, target) {
+            let i
+            let j
+            for(i=0; i&lt;nums.length;i++){ 
+                for(j=i+1;j&lt;nums.length;j++){ 
+                    if(nums[i]+nums[j]===target){
+                        return [i,j]
+                    }
+                }    
+            } 
+        }
+        </code></pre>
+    
         </div>
         <div>
             2. Add Two Numbers<br>
