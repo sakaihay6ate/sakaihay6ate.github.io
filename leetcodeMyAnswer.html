@@ -11,7 +11,7 @@
     有空再做視覺化跟思路整理讓未來的自己笑一笑<br>
         <div>
         1. Two Sum
-        <pre><code class="js">
+        <pre><code>
         var twoSum = function(nums, target) {
             let i
             let j
@@ -27,40 +27,42 @@
     
         </div>
         <div>
-            2. Add Two Numbers<br>
-            <!-- var addTwoNumbers = function(l1, l2) {
+        2. Add Two Numbers<br>
+            <pre><code>
+        var addTwoNumbers = function(l1, l2) {
             let list=new ListNode(0);
             let result =list;
             let carry=0;
             CalFunc=()=>{
-            let tempnum=0;
-            if(l1){
-            tempnum+=l1.val
-            l1=l1.next;
-            }
-            if(l2){
-            tempnum+=l2.val
-            l2=l2.next;
-            }
-            if(carry){
-            tempnum+=1
-            }
-            if(tempnum>9){
-            carry=1;
-            list.next=new ListNode(tempnum%10);
-            }else{
-            carry=0;
-            list.next=new ListNode(tempnum);
-            }
-            list=list.next
-            if(l1||l2||carry){
-            CalFunc();
-            }
+                let tempnum=0;
+                if(l1){
+                    tempnum+=l1.val
+                    l1=l1.next;
+                }
+                if(l2){
+                    tempnum+=l2.val
+                    l2=l2.next;
+                }
+                if(carry){
+                    tempnum+=1
+                }
+                if(tempnum>9){
+                    carry=1;
+                    list.next=new ListNode(tempnum%10);
+                }else{
+                    carry=0;
+                    list.next=new ListNode(tempnum);
+                }
+                list=list.next
+                if(l1||l2||carry){
+                    CalFunc();
+                }
             }
             CalFunc()
             return result.next;
             
-            }; -->
+            };
+            </code></pre>
         </div>
         <div>
             7. Reverse Integer<br>
@@ -542,7 +544,7 @@
         </div>
         <div>
             107. Binary Tree Level Order Traversal II<br>
-            <!--解法1 把102的結果reverse-->
+            解法1 把102的結果reverse<br>
             <!-- var levelOrderBottom = function(root) {
                 if(!root){
                     return []
@@ -564,7 +566,7 @@
                 travelFunc(root,0)
                 return output.reverse();    
             }; -->
-            <!--解法2 多用個變數做紀錄 每階往前塞-->
+            解法2 多用個變數做紀錄 每階往前塞<br>
             <!-- var levelOrderBottom = function(root) {
                 if(!root){
                     return []
