@@ -5,64 +5,75 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <!--vue-->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
     </head>
     <body>
     <!-- 注意左角括號或稱小於符號 < 要用 &lt; 代替，右角括號或稱大於符號> 要用 &gt; 代替 -->
     有空再做視覺化跟思路整理讓未來的自己笑一笑<br>
-        <div>
-        1. Two Sum
-        <pre><code>
-        var twoSum = function(nums, target) {
-            let i
-            let j
-            for(i=0; i&lt;nums.length;i++){ 
-                for(j=i+1;j&lt;nums.length;j++){ 
-                    if(nums[i]+nums[j]===target){
-                        return [i,j]
-                    }
-                }    
-            } 
-        }
-        </code></pre>
-    
-        </div>
-        <div>
-        2. Add Two Numbers<br>
+
+            <a class="badge badge-light" data-toggle="collapse" href="#problem1" >1. Two Sum</a><br>
+            <div class="collapse" id="problem1">        
             <pre><code>
-        var addTwoNumbers = function(l1, l2) {
-            let list=new ListNode(0);
-            let result =list;
-            let carry=0;
-            CalFunc=()=>{
-                let tempnum=0;
-                if(l1){
-                    tempnum+=l1.val
-                    l1=l1.next;
-                }
-                if(l2){
-                    tempnum+=l2.val
-                    l2=l2.next;
-                }
-                if(carry){
-                    tempnum+=1
-                }
-                if(tempnum>9){
-                    carry=1;
-                    list.next=new ListNode(tempnum%10);
-                }else{
-                    carry=0;
-                    list.next=new ListNode(tempnum);
-                }
-                list=list.next
-                if(l1||l2||carry){
-                    CalFunc();
-                }
+            var twoSum = function(nums, target) {
+                let i
+                let j
+                for(i=0; i&lt;nums.length;i++){ 
+                    for(j=i+1;j&lt;nums.length;j++){ 
+                        if(nums[i]+nums[j]===target){
+                            return [i,j]
+                        }
+                    }    
+                } 
             }
-            CalFunc()
-            return result.next;
-            
-            };
             </code></pre>
+            </div>
+
+        <a class="badge badge-light" data-toggle="collapse" href="#problem2" >2. Add Two Numbers</a>
+            <div class="collapse" id="problem2">
+            <pre><code>
+                var addTwoNumbers = function(l1, l2) {
+                    let list=new ListNode(0);
+                    let result =list;
+                    let carry=0;
+                    CalFunc=()=>{
+                        let tempnum=0;
+                        if(l1){
+                            tempnum+=l1.val
+                            l1=l1.next;
+                        }
+                        if(l2){
+                            tempnum+=l2.val
+                            l2=l2.next;
+                        }
+                        if(carry){
+                            tempnum+=1
+                        }
+                        if(tempnum>9){
+                            carry=1;
+                            list.next=new ListNode(tempnum%10);
+                        }else{
+                            carry=0;
+                            list.next=new ListNode(tempnum);
+                        }
+                        list=list.next
+                        if(l1||l2||carry){
+                            CalFunc();
+                        }
+                    }
+                    CalFunc()
+                    return result.next;
+                    
+                    };
+                    </code></pre>
+            </div>
+            
         </div>
         <div>
             7. Reverse Integer<br>
@@ -590,6 +601,22 @@
                 return output;    
             }; -->
         </div>
+            <a class="badge badge-light" data-toggle="collapse" href="#problem108">108. Convert Sorted Array to Binary Search Tree</a><br>
+            <div class="collapse" id="problem108">
+                <pre><code>
+                    var sortedArrayToBST = function(nums) {
+                        let buildBST=(l,r)=>{
+                            if(l>r) return null;
+                            let m=l+Math.floor((r-l+1)/2);
+                            let node=new TreeNode(nums[m]);
+                            node.left=buildBST(l,m-1);
+                            node.right=buildBST(m+1,r);
+                            return node;
+                        }
+                        return buildBST(0,nums.length-1);
+                    };//DFS                
+                </code></pre>
+            </div>
         <p><a href="https://leetcode.com/user4635/">leetcodeAC</a></p>
     </body>
 </html>
