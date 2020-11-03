@@ -21,12 +21,14 @@ class HookPractice extends React.Component{
     }
     render(){
         return(
-                // <p>you clicked {this.state.count} times.</p>
-                <button onClick={()=>this.setCount(this.state.count+1)}>click me</button>
+            <div>
+                <p>you clicked {this.state.count} times.</p>
+                <button onclick={()=>{this.setCount(this.state.count+1)}}>click me</button>
+            </div>
         )
     }
 }
 ReactDOM.render(
-    <HookPractice />,
+    <hookPractice />,
     document.getElementById('hookPractice')
   );
