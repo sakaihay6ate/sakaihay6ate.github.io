@@ -29,6 +29,6 @@ class HookPractice extends React.Component{
     }
 }
 ReactDOM.render(
-    <hookPractice />,
+    <HookPractice />,
     document.getElementById('hookPractice')
   );
