@@ -617,6 +617,28 @@
                     };//DFS                
                 </code></pre>
             </div>
+            <a class="badge badge-light" data-toggle="collapse" href="#problem110">110. Balanced Binary Tree</a><br>
+            <div class="collapse" id="problem110">
+                <pre><code>
+                    var isBalanced = function(root) {
+                        let checkBalance=(node)=>{
+                            if(!node){
+                                return 0
+                            }
+                            let l=checkBalance(node.left);
+                            let r=checkBalance(node.right);
+                            if(Math.abs(l-r)>1){
+                                return Infinity;
+                            }
+                            return 1+Math.max(l,r);
+                        }
+                        if(!root){
+                            return true
+                        }
+                        return checkBalance(root)!==Infinity
+                    };                
+                </code></pre>
+            </div>            
         <p><a href="https://leetcode.com/user4635/">leetcodeAC</a></p>
     </body>
 </html>
