@@ -7,3 +7,7 @@ function hookPractice(){
         </div>
     )
 }
+ReactDOM.render(
+    <hookPractice />,
+    document.getElementById('hookPractice')
+  );
