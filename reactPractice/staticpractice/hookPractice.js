@@ -15,6 +15,7 @@ class HookPractice extends React.Component{
         }
     }
     setCount(i){
+        console.log(`setCount`)
         this.setState({
             count:i
         })
