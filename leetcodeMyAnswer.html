@@ -638,6 +638,20 @@
                         return checkBalance(root)!==Infinity
                     };                
                 </code></pre>
+            </div>
+            <a class="badge badge-light" data-toggle="collapse" href="#problem111">111. Minimum Depth of Binary Tree</a><br>            
+            <div class="collapse" id="problem111">
+                <pre><code>
+                    var minDepth = function(root) {
+                        if(!root) return 0;
+                        let L=minDepth(root.left)
+                        let R=minDepth(root.right)
+                        return 1+(Math.min(L,R)||Math.max(L,R))
+                        //min(L,R)>0代表有左右皆有子節點須選小的 min||max=min
+                        //min(L,R)=0且max>0代表有子節點要回傳子節點深度 min||max=max
+                        //max(L,R)=0代表為葉子 min=max=0
+                    };              
+                </code></pre>
             </div>            
         <p><a href="https://leetcode.com/user4635/">leetcodeAC</a></p>
     </body>
