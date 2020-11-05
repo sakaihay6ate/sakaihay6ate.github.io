@@ -652,7 +652,18 @@
                         //max(L,R)=0代表為葉子 min=max=0
                     };              
                 </code></pre>
-            </div>            
+            </div>
+            <a class="badge badge-light" data-toggle="collapse" href="#problem112">112. Path Sum</a><br>            
+            <div class="collapse" id="problem112">
+                <pre><code>
+                    var hasPathSum = function(root, sum) {
+                        if(!root)return false;
+                        sum=sum-root.val;
+                        if(!(root.left||root.right)&&sum==0)return true
+                        return hasPathSum(root.left,sum)||hasPathSum(root.right,sum)
+                    };              
+                </code></pre>
+            </div>
         <p><a href="https://leetcode.com/user4635/">leetcodeAC</a></p>
     </body>
 </html>
