@@ -17,7 +17,7 @@
     <body>
     <!-- 注意左角括號或稱小於符號 < 要用 &lt; 代替，右角括號或稱大於符號> 要用 &gt; 代替 -->
     有空再做視覺化跟思路整理讓未來的自己笑一笑<br>
-
+    <!-- <div class="container-fluid"> -->
             <a class="badge badge-light" data-toggle="collapse" href="#problem1" >1. Two Sum</a><br>
             <div class="collapse" id="problem1">        
             <pre><code>
@@ -664,6 +664,29 @@
                     };              
                 </code></pre>
             </div>
+            <a class="badge badge-light" data-toggle="collapse" href="#problem113">113. Path Sum II</a><br>            
+            <div class="collapse" id="problem113">
+                <pre><code>
+                    var pathSum = function(root, sum) {
+                        let result=[]
+                        if(!root)return result
+                        let checkSum=(node,route,num)=>{
+                            route.push(node.val)
+                            if(num==node.val&&!node.left&&!node.right){
+                                result.push(route.slice())//用slice複製陣列推到result
+                            }else{
+                                if(node.left)checkSum(node.left,route,num-node.val);
+                                if(node.right)checkSum(node.right,route,num-node.val);
+                            }
+                            route.pop()//回上一層
+                        }
+                        checkSum(root,[],sum)
+                        return result
+                        
+                    };       
+                </code></pre>
+            <!-- </div> -->
         <p><a href="https://leetcode.com/user4635/">leetcodeAC</a></p>
+        </div>
     </body>
 </html>
