@@ -1,10 +1,12 @@
 <html>
     <head>
         <title>leetcodeSolutionNote</title>
+    <!--google prettify-->
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <!-- highlight.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initHighlightingOnLoad();</script> -->
     <!--vue-->
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
     <!--bootstrap-->
@@ -20,7 +22,7 @@
     <!-- <div class="container-fluid"> -->
             <a class="badge badge-light" data-toggle="collapse" href="#problem1" >1. Two Sum</a><br>
             <div class="collapse" id="problem1">        
-            <pre><code>
+            <pre class="prettyprint"><code>
             var twoSum = function(nums, target) {
                 let i
                 let j
@@ -37,7 +39,7 @@
 
         <a class="badge badge-light" data-toggle="collapse" href="#problem2" >2. Add Two Numbers</a>
             <div class="collapse" id="problem2">
-            <pre><code>
+            <pre class="prettyprint"><code>
                 var addTwoNumbers = function(l1, l2) {
                     let list=new ListNode(0);
                     let result =list;
@@ -603,7 +605,7 @@
         </div>
             <a class="badge badge-light" data-toggle="collapse" href="#problem108">108. Convert Sorted Array to Binary Search Tree</a><br>
             <div class="collapse" id="problem108">
-                <pre><code>
+                <pre class="prettyprint"><code>
                     var sortedArrayToBST = function(nums) {
                         let buildBST=(l,r)=>{
                             if(l>r) return null;
@@ -619,7 +621,7 @@
             </div>
             <a class="badge badge-light" data-toggle="collapse" href="#problem110">110. Balanced Binary Tree</a><br>
             <div class="collapse" id="problem110">
-                <pre><code>
+                <pre class="prettyprint"><code>
                     var isBalanced = function(root) {
                         let checkBalance=(node)=>{
                             if(!node){
@@ -641,7 +643,7 @@
             </div>
             <a class="badge badge-light" data-toggle="collapse" href="#problem111">111. Minimum Depth of Binary Tree</a><br>            
             <div class="collapse" id="problem111">
-                <pre><code>
+                <pre class="prettyprint"><code>
                     var minDepth = function(root) {
                         if(!root) return 0;
                         let L=minDepth(root.left)
@@ -655,7 +657,7 @@
             </div>
             <a class="badge badge-light" data-toggle="collapse" href="#problem112">112. Path Sum</a><br>            
             <div class="collapse" id="problem112">
-                <pre><code>
+                <pre class="prettyprint"><code>
                     var hasPathSum = function(root, sum) {
                         if(!root)return false;
                         sum=sum-root.val;
@@ -666,7 +668,7 @@
             </div>
             <a class="badge badge-light" data-toggle="collapse" href="#problem113">113. Path Sum II</a><br>            
             <div class="collapse" id="problem113">
-                <pre><code>
+                <pre class="prettyprint"><code>
                     var pathSum = function(root, sum) {
                         let result=[]
                         if(!root)return result
@@ -684,6 +686,31 @@
                         return result
                         
                     };       
+                </code></pre>
+            </div>
+            <a class="badge badge-light" data-toggle="collapse" href="#problem118">118. Pascal's Triangle</a><br>            
+            <div class="collapse" id="problem118">
+                <pre class="prettyprint"><code>
+                    var generate = function(numRows) {
+                        if(!numRows) return []//numRows=0回傳
+                        let triangle=[[1]]//三角形第一層
+                        let func=(row)=>{
+                            if(numRows-row==0){//檢查三角形高度是否達標
+                                return triangle;
+                            }
+                            let preRow=triangle[triangle.length-1]
+                            let curRow=[1]
+                            for(let i=1;i<=row;i++){
+                                let pre1=preRow[i-1];
+                                let pre2=preRow[i]?preRow[i]:0//preRow[i]不存在代表pre1=1
+                                curRow.push(pre1+pre2)
+                            }
+                            triangle.push(curRow);
+                            return func(row+1)
+                            
+                        }
+                        return func(1) 
+                    };
                 </code></pre>
             </div>
         <p><a href="https://leetcode.com/user4635/">leetcodeAC</a></p>
