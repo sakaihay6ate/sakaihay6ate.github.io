@@ -4,7 +4,7 @@
 
 <body> 
 	<!-- <canvas id="main"></canvas> -->
-	<script type="text/javascript" src="jscript/pixi.min.js"></script> 
+	<script type="text/javascript" src="jscript/pixi.min.js" ></script> 
 
 <script>
 console.log(PIXI);
@@ -38,7 +38,7 @@ loader
   	"images/a9W8b8i.jpg",
   	])
   .add("maidsakuya","http://i.imgur.com/oJQAxEC.jpg")
-  .on("progress".loadProgressHandler)
+  .on("progress",loadProgressHandler)
   .load(setup);
 
 //loading function
