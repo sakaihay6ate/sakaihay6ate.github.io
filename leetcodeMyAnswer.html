@@ -743,6 +743,29 @@ Memory Usage: 38.6 MB, less than 5.86% of JavaScript online submissions for Pasc
                     };
                 </code></pre>
             </div>
+            <a class="badge badge-light" data-toggle="collapse" href="#problem344">344. Reverse String</a><br>            
+            <div class="collapse" id="problem344">
+                <pre class="prettyprint"><code>
+                    var reverseString = function(s) {
+                        return s.reverse()
+                    };
+                </code></pre>
+            </div>          
+            <a class="badge badge-light" data-toggle="collapse" href="#problem349">349. Intersection of Two Arrays</a><br>            
+            <div class="collapse" id="problem349">
+                <pre class="prettyprint"><code>
+                    var intersection = function(nums1, nums2) {
+                        let nums2Set=new Set(nums2);
+                        let intersectionSet=new Set();
+                        nums1.forEach(o=>{
+                            if(nums2Set.has(o)){
+                                intersectionSet.add(o)
+                            }
+                        })
+                        return Array.from(intersectionSet)
+                    };
+                </code></pre>
+            </div>     
         <p><a href="https://leetcode.com/user4635/">leetcodeAC</a></p>
         <!-- </div> -->
     </body>
