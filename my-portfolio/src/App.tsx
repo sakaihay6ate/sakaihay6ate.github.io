@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Moon, Sun, Menu, X } from "lucide-react";
-import '../tailwind.css'  // ← 改成從根目錄匯入
+import '../tailwind.css';  // ← 改成從根目錄匯入
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -13,6 +13,7 @@ function App() {
     } else {
       document.documentElement.classList.remove("dark");
     }
+    
   }, [darkMode]);
 
   const navItems = ["關於我", "作品集", "聯絡我"];
@@ -131,7 +132,31 @@ function App() {
           </p>
         </div>
       </section>
+      {/* Iframe 嵌入區塊（例如 YouTube 影片） */}
+      <section id="作品集" className="py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <h2 className="text-4xl font-bold text-center mb-12">我的作品 Demo</h2>
 
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-full h-[540px] max-w-[960px] mx-auto rounded-2xl overflow-hidden shadow-2xl relative"  // 你的固定大小容器
+          >
+            <iframe
+              src="https://sakaihay6ate.github.io/nyancat/"  // 你的正確網址
+              title="Nyan Cat Demo"
+              allowFullScreen
+              className="absolute inset-0 w-[960px] h-[540px] border-0 origin-top-left"
+              style={{ transform: `scale(0.85)` }}  // ← 關鍵！縮小 75%（可調 0.5~1）
+            ></iframe>
+          </motion.div>
+
+          <p className="text-center mt-8 text-gray-600 dark:text-gray-400">
+            pixi小遊戲；iframe執行有問題尚未修復，請<a href="https://sakaihay6ate.github.io/nyancat/" target="_blank" className="text-primary hover:underline">按此開新網頁遊玩</a>。🎥
+          </p>
+        </div>
+      </section>
       {/* Footer */}
       <footer className="py-8 text-center text-gray-500">
         © 2025 Richie. All rights reserved.
