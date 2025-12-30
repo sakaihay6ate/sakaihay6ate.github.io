@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 定義變數（淺色預設） */
+@theme {
+  --color-bg: #ffffff;
+  --color-text: #111111;
+  --color-card: #f3f4f6;
+  --color-primary: #6366f1;
+  --color-secondary: #a78bfa;
+}
+
+/* 深色模式下覆蓋變數 */
+@layer theme {
+  :root, :host {
+    @variant dark {
+      --color-bg: #0f172a;      /* 深藍灰 */
+      --color-text: #f1f5f9;
+      --color-card: #1e293b;
+      --color-primary: #818cf8;
+      --color-secondary: #c4b5fd;
+    }
+  }
+}
+
+/* 全站使用變數 */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* 卡片、區塊等 */
+.bg-card { @apply bg-[var(--color-card)]; }
+.text-primary { @apply text-[var(--color-primary)]; }
+/* 你可以自訂更多 class，或直接在 JSX 用 inline 如 bg-[var(--color-bg)] */
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
