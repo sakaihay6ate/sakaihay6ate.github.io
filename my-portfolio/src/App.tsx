@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Moon, Sun, Menu, X } from "lucide-react";
+import '../tailwind.css'  // ← 改成從根目錄匯入
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -114,9 +115,6 @@ function App() {
             </a>
             <a href="https://linkedin.com/in/yourusername" target="_blank" className="p-4 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-primary hover:text-white transition-all">
               <Linkedin size={28} />
-            </a>
-            <a href="mailto:your@email.com" className="p-4 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-primary hover:text-white transition-all">
-              <Mail size={28} />
             </a>
           </motion.div>
         </div>
