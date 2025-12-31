@@ -17,7 +17,7 @@ function App() {
 
   }, [darkMode]);
 
-  const navItems = ["關於我", "作品集", "聯絡我"];
+  const navItems = ["關於我", "技能", "作品集", "聯絡我"];
 
   return (
     <>
@@ -149,8 +149,17 @@ function App() {
             transition={{ delay: 0.2 }}
             className="text-lg text-center text-gray-600 dark:text-gray-400 mb-20 max-w-2xl mx-auto"
           >
-            我是 Richie，前端工程師，熱愛 React、TypeScript 和現代網頁設計。
-            平時喜歡喝咖啡、研究新技術、做小專案 ☕
+            我是 Richie，一隻對著鍵盤亂敲的打字猴。
+            {/* <ul>skills
+              <li>React</li>
+              <li>Vue.js</li>
+              <li>Docker</li>
+              <li>Git</li>
+              <li>TypeScript</li>
+              <li>PIXIJS</li>
+              <li>Tailwind CSS</li>
+              <li>Node.js</li>
+            </ul> */}
           </motion.p>
 
           {/* 學歷與經歷時間軸 */}
@@ -165,22 +174,34 @@ function App() {
                 {/* 每筆資料 */}
                 <TimelineItem isLeft={true}>
                   <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
-                    <h4 className="text-2xl font-bold mb-2">國立臺灣大學</h4>
-                    <p className="text-primary mb-4">資訊工程學系 ⋅ 學士</p>
-                    <p className="text-gray-600 dark:text-gray-400">2018 – 2022</p>
+                    <h4 className="text-2xl font-bold mb-2">國立臺北科技大學</h4>
+                    <p className="text-primary mb-4">電機工程所 ⋅ 碩士</p>
+                    <p className="text-gray-600 dark:text-gray-400">2013/9 - 2015/6</p>
                     <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
-                      <li>主修前端開發、資料結構與演算法</li>
-                      <li>GPA 4.0 / 4.3，年級前 5%</li>
-                      <li>校內程式設計比賽金牌</li>
+                      <li>碩論:以資料發掘技術分析與預測社群網路中書本之評價與人氣</li>
+                      <li>主要做網路爬蟲、資料探勘等相關研究。</li>
+                    </ul>
+                  </div>
+                </TimelineItem>
+                <TimelineItem >
+                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+                    <h4 className="text-2xl font-bold mb-2">國立高雄大學</h4>
+                    <p className="text-primary mb-4">電機工程系 ⋅ 學士</p>
+                    <p className="text-gray-600 dark:text-gray-400">22009/7 - 2013/6</p>
+                    <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                      <li>大學專題:利用模糊理論控制四輪撿球機器人之輪轉速</li>
                     </ul>
                   </div>
                 </TimelineItem>
 
-                <TimelineItem >
+                <TimelineItem isLeft={true}>
                   <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
-                    <h4 className="text-2xl font-bold mb-2">臺北市立和平高中</h4>
+                    <h4 className="text-2xl font-bold mb-2">臺北市立和平高級中學</h4>
                     <p className="text-primary mb-4">高中</p>
                     <p className="text-gray-600 dark:text-gray-400">2015 – 2018</p>
+                    <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                      <li>第三類組</li>
+                    </ul>
                   </div>
                 </TimelineItem>
               </div>
@@ -193,7 +214,7 @@ function App() {
                 <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
                   <h4 className="text-2xl font-bold mb-2">程式設計師 ⋅ 泰偉電子</h4>
                   <p className="text-primary mb-4">全職</p>
-                  <p className="text-gray-600 dark:text-gray-400">2016/9/19 – 2020/10/22</p>
+                  <p className="text-gray-600 dark:text-gray-400">2016/9/19 – 2020/10/22・4年2個月</p>
                   <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
                     <li>使用技術:Pixi.js, ES6</li>
                     <li>在公司內部框架內使用ES6撰寫HTML5遊戲client</li>
@@ -205,13 +226,20 @@ function App() {
               <div className="space-y-12">
                 <TimelineItem isLeft={true}>
                   <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
-                    <h4 className="text-2xl font-bold mb-2">前端工程師 ⋅ 某科技公司</h4>
+                    <h4 className="text-2xl font-bold mb-2">H5遊戲前端工程師  ⋅ 某科技公司</h4>
                     <p className="text-primary mb-4">全職</p>
-                    <p className="text-gray-600 dark:text-gray-400">2023 – 現在</p>
+                    <p className="text-gray-600 dark:text-gray-400">2020/11 - 2025/11・5年1個月</p>
                     <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
-                      <li>負責公司主產品 React 重構，提升效能 40%</li>
-                      <li>帶領 3 人小組開發新功能</li>
-                      <li>導入 Tailwind CSS + TypeScript 標準</li>
+                      <li>H5遊戲製作與維護(使用PIXI與typescript)</li>
+                      <li>H5遊戲共用元件模組製作與維護</li>
+                      <li>使用vue與nodeJs,grunt,typescript製作元件可視化工具以及功能擴充與維護</li>
+                      <li>使用docker與verdaccio架設部門內部私有npm</li>
+                      <li>撰寫架設私有npm/如何製作nodeModule/如何下載私有npm上的module說明文件</li>
+                      <li>利用typescript與shell製作圖片壓縮模組供部門內部使用</li>
+                      <li>使用nginx與pm2架設與管理線上版可視化工具</li>
+                      <li>使用cypress/selenium/appium/webdriverio實現遊戲自動化測試</li>
+                      <li>使用react native製作android/ios殼包</li>
+                      <li>基底大廳功能維護</li>
                     </ul>
                   </div>
                 </TimelineItem>
@@ -220,19 +248,55 @@ function App() {
           </div>
         </div>
       </section>
+      <section id="技能" className="py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl font-bold text-center mb-16"
+          >
+            Skills
+          </motion.h2>
 
+          <div className="grid md:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="space-y-8"
+            >
+              <SkillItem name="React" level={60} />
+              <SkillItem name="Vue.js" level={60} />
+              <SkillItem name="Tangular" level={80} />
+              <SkillItem name="Tailwind CSS" level={60} />
+              <SkillItem name="TypeScript" level={85} />
+              <SkillItem name="JavaScript" level={95} />
+              <SkillItem name="PIXIJS" level={85} />
+              <SkillItem name="Cocos Creator" level={70} />
+            </motion.div>
 
-      {/* 範例：關於我 */}
-      {/* <section id="關於我" className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-4xl font-bold text-center mb-12">關於我</h2>
-          <p className="text-lg leading-relaxed text-center">
-            我是個熱愛前端技術的工程師，專精 React、TypeScript 和現代 CSS。
-            平時喜歡研究新技術、寫部落格、喝咖啡 ☕
-          </p>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="space-y-8"
+            >
+              <SkillItem name="Git / GitHub" level={85} />
+              <SkillItem name="React Native" level={70} />
+              <SkillItem name="Docker" level={70} />
+              <SkillItem name="Node.js" level={85} />
+              <SkillItem name="nginx" level={60} />
+              <SkillItem name="PM2" level={80} />
+              <SkillItem name="Verdaccio" level={65} />
+              <SkillItem name="Electron" level={80} />
+              <SkillItem name="Python" level={70} />
+              <SkillItem name="Perl" level={75} />
+              <SkillItem name="Grunt" level={85} />
+            </motion.div>
+          </div>
         </div>
-      </section> */}
-      {/* Iframe 嵌入區塊（例如 YouTube 影片） */}
+      </section>
+
+
+      {/* 作品集 Section */}
       <section id="作品集" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-6 max-w-5xl">
           <h2 className="text-4xl font-bold text-center mb-12">我的作品 Demo</h2>
@@ -244,14 +308,14 @@ function App() {
             className="w-full h-[540px] max-w-[960px] mx-auto rounded-2xl overflow-hidden shadow-2xl relative"  // 你的固定大小容器
           >
             <iframe
-              src="https://sakaihay6ate.github.io/nyancat/"  // 你的正確網址
+              src="https://sakaihay6ate.github.io/nyancat/"
               title="Nyan Cat Demo"
               allowFullScreen
               className="absolute inset-0 w-[960px] h-[540px] border-0 origin-top-left"
-              style={{ transform: `scale(0.85)` }}  // ← 關鍵！縮小 75%（可調 0.5~1）
+              //todo 要改成依照畫面比例縮小
+              style={{ transform: `scale(0.9)` }}
             ></iframe>
           </motion.div>
-
           <p className="text-center mt-8 text-gray-600 dark:text-gray-400">
             pixi小遊戲；iframe執行有問題尚未修復，請<a href="https://sakaihay6ate.github.io/nyancat/" target="_blank" className="text-primary hover:underline">按此開新網頁遊玩</a>。
           </p>
@@ -264,7 +328,6 @@ function App() {
     </>
   );
 }
-{/* ===== TimelineItem 組件定義（一定要放在這裡！） ===== */ }
 function TimelineItem({ children, isLeft = false }: { children: React.ReactNode; isLeft?: boolean; }) {
   return (
     <motion.div
@@ -274,13 +337,34 @@ function TimelineItem({ children, isLeft = false }: { children: React.ReactNode;
       className="relative flex items-center justify-center"
     >
       {/* 卡片 */}
-      <div className={`w-full md:w-5/12 ${isLeft ? 'md:pr-16' : 'md:pl-16'} order-2 md:order-none`}>
+      <div className={`w-full md:w-7/12 ${isLeft ? 'md:pr-16' : 'md:pl-16'} order-2 md:order-none`}>
         {children}
       </div>
 
       {/* 中間圓點（大螢幕才顯示） */}
       {/* <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-primary rounded-full ring-8 ring-white dark:ring-gray-900 shadow-lg hidden md:block z-10"></div> */}
     </motion.div>
+  );
+}
+// 小組件：單一技能 + 進度條
+function SkillItem({ name, level }: { name: string; level: number; }) {
+  return (
+    <div className="flex items-center gap-6">
+      <div className="flex-1">
+        <div className="flex justify-between mb-2">
+          <span className="font-medium">{name}</span>
+          <span className="text-primary">{level}%</span>
+        </div>
+        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: `${level}%` }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="bg-primary h-3 rounded-full"
+          />
+        </div>
+      </div>
+    </div>
   );
 }
 export default App;
