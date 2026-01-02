@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Moon, Sun, Menu, X, Cake } from "lucide-react";
 import './index.css';
 import leetcode_icon from './assets/svgviewer-output.svg';
+import nyancat_demo from './assets/nyancatdemo2.gif';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -187,7 +188,7 @@ function App() {
                   <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
                     <h4 className="text-2xl font-bold mb-2">國立高雄大學</h4>
                     <p className="text-primary mb-4">電機工程系 ⋅ 學士</p>
-                    <p className="text-gray-600 dark:text-gray-400">22009/7 - 2013/6</p>
+                    <p className="text-gray-600 dark:text-gray-400">2009/7 - 2013/6</p>
                     <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
                       <li>大學專題:利用模糊理論控制四輪撿球機器人之輪轉速</li>
                     </ul>
@@ -305,19 +306,20 @@ function App() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="w-full h-[540px] max-w-[960px] mx-auto rounded-2xl overflow-hidden shadow-2xl relative"  // 你的固定大小容器
+            className="w-full h-[270px] max-w-[480px] mx-auto rounded-2xl overflow-hidden shadow-2xl relative"  // 你的固定大小容器
           >
-            <iframe
+            {/* <iframe
               src="https://sakaihay6ate.github.io/nyancat/"
               title="Nyan Cat Demo"
               allowFullScreen
               className="absolute inset-0 w-[960px] h-[540px] border-0 origin-top-left"
               //todo 要改成依照畫面比例縮小
               style={{ transform: `scale(0.9)` }}
-            ></iframe>
+            ></iframe> */}
+            <img src={nyancat_demo} alt="Nyan Cat Demo" className="absolute inset-0 w-[480px] h-[270px] border-0 origin-top-left" />
           </motion.div>
           <p className="text-center mt-8 text-gray-600 dark:text-gray-400">
-            pixi小遊戲；iframe執行有問題尚未修復，請<a href="https://sakaihay6ate.github.io/nyancat/" target="_blank" className="text-primary hover:underline">按此開新網頁遊玩</a>。
+            pixi小遊戲；尚未支持手機上遊玩，請<a href="https://sakaihay6ate.github.io/nyancat/" target="_blank" className="text-primary hover:underline">按此開新網頁遊玩</a>。
           </p>
         </div>
       </section>
