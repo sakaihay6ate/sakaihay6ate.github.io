@@ -4,6 +4,8 @@ import { Github, Linkedin, Moon, Sun, Menu, X, Cake } from "lucide-react";
 import './index.css';
 import leetcode_icon from './assets/svgviewer-output.svg';
 import nyancat_demo from './assets/nyancatdemo2.gif';
+import TimelineItem from "./componets/timelineItem";
+import SkillItem from "./componets/SkillItem";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -301,26 +303,35 @@ function App() {
       <section id="作品集" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-6 max-w-5xl">
           <h2 className="text-4xl font-bold text-center mb-12">我的作品 Demo</h2>
-
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }} className="relative w-full max-w-[540px] mx-auto h-[300px] rounded-2xl overflow-hidden shadow-2xl">
+            <iframe
+              src="https://sakaihay6ate.github.io/reactPractice/staticpractice/tictactoe.html"
+              title="React Tic Tac Toe Demo"
+              allowFullScreen
+              className="absolute inset-0 w-[960px] h-[540px] border-0 origin-top-left"
+            ></iframe>
+          </motion.div>
+          <div className="mt-6 flex items-center justify-center min-h-[60px]">
+            <p className="text-center text-gray-600 dark:text-gray-400 text-lg font-medium">
+              React的圈圈叉叉小遊戲
+            </p>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="w-full h-[270px] max-w-[480px] mx-auto rounded-2xl overflow-hidden shadow-2xl relative"  // 你的固定大小容器
           >
-            {/* <iframe
-              src="https://sakaihay6ate.github.io/nyancat/"
-              title="Nyan Cat Demo"
-              allowFullScreen
-              className="absolute inset-0 w-[960px] h-[540px] border-0 origin-top-left"
-              //todo 要改成依照畫面比例縮小
-              style={{ transform: `scale(0.9)` }}
-            ></iframe> */}
             <img src={nyancat_demo} alt="Nyan Cat Demo" className="absolute inset-0 w-[480px] h-[270px] border-0 origin-top-left" />
           </motion.div>
-          <p className="text-center mt-8 text-gray-600 dark:text-gray-400">
-            pixi小遊戲；尚未支持手機上遊玩，請<a href="https://sakaihay6ate.github.io/nyancat/" target="_blank" className="text-primary hover:underline">按此開新網頁遊玩</a>。
-          </p>
+          <div className="mt-6 flex items-center justify-center min-h-[60px]">
+            <p className="text-center text-gray-600 dark:text-gray-400 text-lg font-medium">
+              pixi小遊戲；尚未支持手機上遊玩，請<a href="https://sakaihay6ate.github.io/nyancat/" target="_blank" className="text-primary hover:underline">按此開新網頁遊玩</a>。
+            </p>
+          </div>
         </div>
       </section>
       {/* Footer */}
@@ -330,43 +341,6 @@ function App() {
     </>
   );
 }
-function TimelineItem({ children, isLeft = false }: { children: React.ReactNode; isLeft?: boolean; }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6 }}
-      className="relative flex items-center justify-center"
-    >
-      {/* 卡片 */}
-      <div className={`w-full md:w-7/12 ${isLeft ? 'md:pr-16' : 'md:pl-16'} order-2 md:order-none`}>
-        {children}
-      </div>
 
-      {/* 中間圓點（大螢幕才顯示） */}
-      {/* <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-primary rounded-full ring-8 ring-white dark:ring-gray-900 shadow-lg hidden md:block z-10"></div> */}
-    </motion.div>
-  );
-}
-// 小組件：單一技能 + 進度條
-function SkillItem({ name, level }: { name: string; level: number; }) {
-  return (
-    <div className="flex items-center gap-6">
-      <div className="flex-1">
-        <div className="flex justify-between mb-2">
-          <span className="font-medium">{name}</span>
-          <span className="text-primary">{level}%</span>
-        </div>
-        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: `${level}%` }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="bg-primary h-3 rounded-full"
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
+
 export default App;
