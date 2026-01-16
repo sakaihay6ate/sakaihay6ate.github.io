@@ -20,7 +20,7 @@ function App() {
 
   }, [darkMode]);
 
-  const navItems = ["關於我", "技能", "作品集", "聯絡我"];
+  const navItems = ["關於我", "技能", "作品集"];
 
   return (
     <>
@@ -118,23 +118,21 @@ function App() {
             <a href="https://github.com/sakaihay6ate" target="_blank" className="p-4 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-primary hover:text-white transition-all">
               <Github size={28} />
             </a>
-            <a href="https://linkedin.com/in/xxx" target="_blank" className="p-4 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-primary hover:text-white transition-all">
+            <a href="https://www.linkedin.com/in/ruei-chi-lin-2344a81b6" target="_blank" className="p-4 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-primary hover:text-white transition-all">
               <Linkedin size={28} />
             </a>
             <a href="https://leetcode.com/u/user4635/" target="_blank" className="p-4 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-primary hover:text-white transition-all">
               <img
-                src={leetcode_icon}
-                alt="LeetCode" className="w-7 h-7 transition-transform hover:scale-110"
+                src={leetcode_icon} alt="LeetCode" className="w-7 h-7 transition-transform hover:scale-110"
               />
             </a>
-            <a href="" target="_blank" className="p-4 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-primary hover:text-white transition-all">
+            <a href="https://www.cake.me/me/ruei-chi-lin" target="_blank" className="p-4 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-primary hover:text-white transition-all">
               <Cake size={28} />
             </a>
           </motion.div>
         </div>
       </section>
 
-      {/* 其他區塊（關於我、作品集、聯絡我）你可以自己加，結構一樣簡單 */}
       <section id="關於我" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-6 max-w-5xl">
           <motion.h2
@@ -153,23 +151,50 @@ function App() {
             className="text-lg text-center text-gray-600 dark:text-gray-400 mb-20 max-w-2xl mx-auto"
           >
             我是 Richie，一隻對著鍵盤亂敲的打字猴。
-            {/* <ul>skills
-              <li>React</li>
-              <li>Vue.js</li>
-              <li>Docker</li>
-              <li>Git</li>
-              <li>TypeScript</li>
-              <li>PIXIJS</li>
-              <li>Tailwind CSS</li>
-              <li>Node.js</li>
-            </ul> */}
           </motion.p>
 
           {/* 學歷與經歷時間軸 */}
           <div className="relative">
             {/* 中間垂直線 */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-primary h-full opacity-30"></div>
-
+            {/* 經歷 */}
+            <div className="mb-16">
+              <h3 className="text-3xl font-bold text-center mb-12">經歷</h3>
+              <div className="space-y-12">
+                <TimelineItem isLeft={true}>
+                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+                    <h4 className="text-2xl font-bold mb-2">H5遊戲前端工程師  ⋅ 某科技公司</h4>
+                    <p className="text-primary mb-4">全職</p>
+                    <p className="text-gray-600 dark:text-gray-400">2020/11 - 2025/11・5年1個月</p>
+                    <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                      <li>H5遊戲製作與維護(使用PIXI與typescript)</li>
+                      <li>H5遊戲共用元件模組製作與維護</li>
+                      <li>使用vue與nodeJs,grunt,typescript製作元件可視化工具以及功能擴充與維護</li>
+                      <li>使用docker與verdaccio架設部門內部私有npm</li>
+                      <li>撰寫架設私有npm/如何製作nodeModule/如何下載私有npm上的module說明文件</li>
+                      <li>利用typescript與shell製作圖片壓縮模組供部門內部使用</li>
+                      <li>使用nginx與pm2架設與管理線上版可視化工具</li>
+                      <li>使用cypress/selenium/appium/webdriverio實現遊戲自動化測試</li>
+                      <li>使用react native製作android/ios殼包</li>
+                      <li>基底大廳功能維護</li>
+                    </ul>
+                  </div>
+                </TimelineItem>
+                <TimelineItem isLeft={true}>
+                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+                    <h4 className="text-2xl font-bold mb-2">程式設計師 ⋅ 泰偉電子</h4>
+                    <p className="text-primary mb-4">全職</p>
+                    <p className="text-gray-600 dark:text-gray-400">2016/9/19 – 2020/10/22・4年2個月</p>
+                    <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
+                      <li>使用技術:Pixi.js, ES6</li>
+                      <li>在公司內部框架內使用ES6撰寫HTML5遊戲client</li>
+                      <li>使用CocosCreator將原本HTML5遊戲移植</li>
+                      <li>使用tangular製作遊戲網頁注單基本格式</li>
+                    </ul>
+                  </div>
+                </TimelineItem>
+              </div>
+            </div>
             {/* 學歷 */}
             <div className="mb-16">
               <h3 className="text-3xl font-bold text-center mb-12">學歷</h3>
@@ -204,45 +229,6 @@ function App() {
                     <p className="text-gray-600 dark:text-gray-400">2015 – 2018</p>
                     <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
                       <li>第三類組</li>
-                    </ul>
-                  </div>
-                </TimelineItem>
-              </div>
-            </div>
-
-            {/* 經歷 */}
-            <h3 className="text-3xl font-bold text-center mb-12">經歷</h3>
-            <div className="space-y-12">
-              <TimelineItem isLeft={true}>
-                <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
-                  <h4 className="text-2xl font-bold mb-2">程式設計師 ⋅ 泰偉電子</h4>
-                  <p className="text-primary mb-4">全職</p>
-                  <p className="text-gray-600 dark:text-gray-400">2016/9/19 – 2020/10/22・4年2個月</p>
-                  <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
-                    <li>使用技術:Pixi.js, ES6</li>
-                    <li>在公司內部框架內使用ES6撰寫HTML5遊戲client</li>
-                    <li>使用CocosCreator將原本HTML5遊戲移植</li>
-                    <li>使用tangular製作遊戲網頁注單基本格式</li>
-                  </ul>
-                </div>
-              </TimelineItem>
-              <div className="space-y-12">
-                <TimelineItem isLeft={true}>
-                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
-                    <h4 className="text-2xl font-bold mb-2">H5遊戲前端工程師  ⋅ 某科技公司</h4>
-                    <p className="text-primary mb-4">全職</p>
-                    <p className="text-gray-600 dark:text-gray-400">2020/11 - 2025/11・5年1個月</p>
-                    <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
-                      <li>H5遊戲製作與維護(使用PIXI與typescript)</li>
-                      <li>H5遊戲共用元件模組製作與維護</li>
-                      <li>使用vue與nodeJs,grunt,typescript製作元件可視化工具以及功能擴充與維護</li>
-                      <li>使用docker與verdaccio架設部門內部私有npm</li>
-                      <li>撰寫架設私有npm/如何製作nodeModule/如何下載私有npm上的module說明文件</li>
-                      <li>利用typescript與shell製作圖片壓縮模組供部門內部使用</li>
-                      <li>使用nginx與pm2架設與管理線上版可視化工具</li>
-                      <li>使用cypress/selenium/appium/webdriverio實現遊戲自動化測試</li>
-                      <li>使用react native製作android/ios殼包</li>
-                      <li>基底大廳功能維護</li>
                     </ul>
                   </div>
                 </TimelineItem>
