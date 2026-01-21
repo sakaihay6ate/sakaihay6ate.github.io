@@ -6,6 +6,7 @@ import leetcode_icon from './assets/svgviewer-output.svg';
 import nyancat_demo from './assets/nyancatdemo2.gif';
 import TimelineItem from "./componets/timelineItem";
 import SkillItem from "./componets/SkillItem";
+import FAQSection from "./componets/FAQ";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -17,10 +18,9 @@ function App() {
     } else {
       document.documentElement.classList.remove("dark");
     }
-
   }, [darkMode]);
 
-  const navItems = ["關於我", "技能", "作品集"];
+  const navItems = ["關於我", "技能", "作品集","問與答"];
 
   return (
     <>
@@ -320,6 +320,7 @@ function App() {
           </div>
         </div>
       </section>
+      <FAQSection />
       {/* Footer */}
       <footer className="py-8 text-center text-gray-500">
         © 2025 Richie. All rights reserved.
