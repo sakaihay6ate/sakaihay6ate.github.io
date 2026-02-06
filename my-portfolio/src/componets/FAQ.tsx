@@ -9,7 +9,11 @@ function FAQSection() {
     {
       question: "對人生的看法?",
       answer: "活著就是在不斷的懊悔中掙扎。"
-    }
+    },
+    {
+      question: "你認為自己是一個幸運的人嗎?",
+      answer: "對，沒錯。我是一個幸運的人。"
+    },
   ];
 
   const toggleFAQ = (index: number) => {

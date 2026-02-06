@@ -226,7 +226,7 @@ function App() {
                   <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
                     <h4 className="text-2xl font-bold mb-2">臺北市立和平高級中學</h4>
                     <p className="text-primary mb-4">高中</p>
-                    <p className="text-gray-600 dark:text-gray-400">2015 – 2018</p>
+                    <p className="text-gray-600 dark:text-gray-400">2006 – 2009</p>
                     <ul className="mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
                       <li>第三類組</li>
                     </ul>
